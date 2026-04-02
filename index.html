@@ -1,178 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invitation | Kavya & Vineeth</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --purple-accent: #6a4c93;
-            --dark-text: #2d3436;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kavya & Vineeth Engagement</title>
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;600&family=Lora&display=swap" rel="stylesheet">
 
-        body, html {
-            height: 100%;
-            font-family: 'Lato', sans-serif;
-            color: var(--dark-text);
-            background-color: #fff;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        /* FIXED BACKGROUND */
-        .bg-fixed {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            z-index: -1;
-            /* CHANGE 'bg.png' TO YOUR ACTUAL FILE NAME (e.g. 'bg.jpg') IF DIFFERENT */
-            background: url('bg.png') no-repeat center center;
-            background-size: cover;
-        }
+body {
+    height: 100vh;
+    font-family: 'Lora', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-        .wrapper {
-            display: flex;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
+    /* FIXED BACKGROUND */
+    background: url('bg.png') no-repeat center center;
+    background-size: cover;
+}
 
-        .content {
-            max-width: 600px;
-            width: 100%;
-            text-align: center;
-            margin-top: 100px;
-            animation: fadeIn 1.5s ease-in;
-        }
+/* Content aligned to center circle */
+.container {
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    animation: fadeIn 1.5s ease;
+}
 
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+/* Header */
+.top-text {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 2px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
 
-        .wreath-area {
-            height: 350px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+/* Names */
+.names {
+    font-family: 'Great Vibes', cursive;
+    font-size: 60px;
+    color: #5d4037;
+    margin: 15px 0;
+    animation: scaleIn 1.2s ease;
+}
 
-        .om { font-size: 2.5rem; color: #5d4037; margin-bottom: 10px; }
-        .names { font-family: 'Great Vibes', cursive; font-size: 4.5rem; color: #000; line-height: 1; }
+.names span {
+    display: block;
+    font-size: 28px;
+}
 
-        /* DATE SECTION */
-        .date-row {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 40px 0;
-        }
+/* Invite text */
+.invite {
+    margin: 20px 0;
+    font-size: 14px;
+}
 
-        .line { border-bottom: 2px solid #ddd; width: 80px; margin: 0 15px; }
+/* Date */
+.month {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 3px;
+}
 
-        .date-main { font-family: 'Playfair Display', serif; font-size: 3.5rem; line-height: 1; }
-        .m-y { font-size: 0.8rem; letter-spacing: 4px; color: var(--purple-accent); font-weight: bold; }
+.big-date {
+    font-size: 50px;
+    font-family: 'Cinzel', serif;
+    margin: 10px 0;
+}
 
-        /* TIMER */
-        #timer { display: flex; justify-content: center; gap: 15px; margin: 30px 0; }
-        .t-box { background: rgba(255, 255, 255, 0.8); padding: 10px; border-radius: 8px; min-width: 60px; border: 1px solid #eee; }
-        .t-box span { display: block; font-size: 1.4rem; font-weight: 700; color: var(--purple-accent); }
-        .t-box p { font-size: 0.6rem; text-transform: uppercase; }
+.time {
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+}
 
-        /* MAP & BUTTON */
-        .btn-dir {
-            display: inline-block;
-            background: var(--purple-accent);
-            color: white;
-            padding: 14px 35px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(106, 76, 147, 0.3);
-        }
+/* Venue */
+.venue {
+    margin-top: 20px;
+    font-size: 14px;
+}
 
-        .map-frame {
-            height: 300px;
-            width: 100%;
-            border-radius: 15px;
-            overflow: hidden;
-            border: 1px solid #ddd;
-            margin-bottom: 40px;
-        }
+/* Countdown */
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 25px 0;
+}
 
-        @media (max-width: 500px) {
-            .names { font-size: 3.2rem; }
-            .wreath-area { height: 280px; }
-            .content { margin-top: 60px; }
-        }
-    </style>
+.unit span {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.unit label {
+    font-size: 10px;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #b38b4d;
+    color: white;
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #5d4037;
+}
+
+/* Map */
+iframe {
+    margin-top: 20px;
+    width: 100%;
+    height: 200px;
+    border: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes scaleIn {
+    from {transform: scale(0.8); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+}
+
+</style>
 </head>
+
 <body>
 
-    <div class="bg-fixed"></div>
+<div class="container">
 
-    <div class="wrapper">
-        <main class="content">
-            
-            <div class="wreath-area">
-                <div class="om">🕉</div>
-                <p style="letter-spacing: 3px; font-size: 0.7rem; color: #666; margin-bottom: 10px;">TOGETHER WITH THEIR FAMILIES</p>
-                <h1 class="names">Kavya & Vineeth</h1>
-            </div>
+    <div class="top-text">TOGETHER WITH THEIR FAMILIES</div>
 
-            <p style="font-style: italic; color: #888; margin: 20px 0;">cordially invite you to the engagement ceremony on</p>
-
-            <section class="date-row">
-                <div style="font-weight:700; font-size: 0.8rem;">WEDNESDAY</div>
-                <div class="line"></div>
-                <div>
-                    <p class="m-y">MAY</p>
-                    <p class="date-main">13</p>
-                    <p class="m-y">2026</p>
-                </div>
-                <div class="line"></div>
-                <div style="font-weight:700; font-size: 0.8rem;">AT 9:45 AM</div>
-            </section>
-
-            <div id="timer">
-                <div class="t-box"><span id="d">00</span><p>Days</p></div>
-                <div class="t-box"><span id="h">00</span><p>Hrs</p></div>
-                <div class="t-box"><span id="m">00</span><p>Min</p></div>
-                <div class="t-box"><span id="s">00</span><p>Sec</p></div>
-            </div>
-
-            <div style="margin-top: 50px;">
-                <h2 style="font-family:'Playfair Display';">SANJO AUDITORIUM</h2>
-                <p style="font-size: 0.9rem; color: #777; margin-bottom: 20px;">Opp. St. Joseph’s Church, Chunangamvely, Aluva</p>
-                
-                <a href="https://maps.app.goo.gl/uFpndv744L6nCenp8" target="_blank" class="btn-dir">GET DIRECTIONS</a>
-
-                <div class="map-frame">
-                    <iframe 
-                        width="100%" 
-                        height="100%" 
-                        style="border:0" 
-                        loading="lazy" 
-                        allowfullscreen 
-                        referrerpolicy="no-referrer-when-downgrade"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.3243292410636!2d76.36015527503112!3d10.072120372074314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0809278065ad77%3A0x6b4be934c98f8e02!2sSanjo%20Auditorium!5e0!3m2!1sen!2sin!4v1712050000000!5m2!1sen!2sin">
-                    </iframe>
-                </div>
-            </div>
-        </main>
+    <div class="names">
+        Kavya
+        <span>&</span>
+        Vineeth
     </div>
 
-    <script>
-        const target = new Date("May 13, 2026 09:45:00").getTime();
-        setInterval(() => {
-            const now = new Date().getTime();
-            const diff = target - now;
-            document.getElementById("d").innerText = Math.max(0, Math.floor(diff / (1000*60*60*24)));
-            document.getElementById("h").innerText = Math.max(0, Math.floor((diff % (1000*60*60*24)) / (1000*60*60)));
-            document.getElementById("m").innerText = Math.max(0, Math.floor((diff % (1000*60*60)) / (1000*60)));
-            document.getElementById("s").innerText = Math.max(0, Math.floor((diff % (1000*60)) / 1000));
-        }, 1000);
-    </script>
+    <div class="invite">
+        invite you to join their engagement celebration
+    </div>
+
+    <div class="month">MAY</div>
+    <div class="big-date">13</div>
+    <div class="time">WEDNESDAY AT 9:45 AM</div>
+    <div class="month">2026</div>
+
+    <div class="venue">
+        <b>SANJO AUDITORIUM</b><br>
+        Chunangamvely, Aluva
+    </div>
+
+    <div class="countdown">
+        <div class="unit"><span id="days">00</span><label>Days</label></div>
+        <div class="unit"><span id="hours">00</span><label>Hrs</label></div>
+        <div class="unit"><span id="mins">00</span><label>Min</label></div>
+        <div class="unit"><span id="secs">00</span><label>Sec</label></div>
+    </div>
+
+    <a href="https://www.google.com/maps/dir/?api=1&destination=10.089611,76.381500" target="_blank" class="btn">
+        Get Directions
+    </a>
+
+    <iframe src="https://www.google.com/maps?q=10.089611,76.381500&output=embed"></iframe>
+
+</div>
+
+<script>
+const target = new Date("May 13, 2026 09:45:00").getTime();
+
+function updateTimer() {
+    const now = new Date().getTime();
+    const diff = target - now;
+
+    if (diff <= 0) return;
+
+    document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
+    document.getElementById("hours").innerText = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    document.getElementById("mins").innerText = Math.floor((diff / (1000 * 60)) % 60);
+    document.getElementById("secs").innerText = Math.floor((diff / 1000) % 60);
+}
+
+setInterval(updateTimer, 1000);
+updateTimer();
+</script>
+
 </body>
 </html>
