@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kavya & Vineeth - Engagement</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header class="fade-in">
+            <p class="sub-text">TOGETHER WITH THEIR FAMILIES</p>
+            <h1 class="names">Kavya & Vineeth</h1>
+            <p class="invite-text">cordially invite you to join the occasion<br>of their engagement ceremony on</p>
+        </header>
+
+        <section class="details slide-up">
+            <div class="date-row">
+                <span class="day">WEDNESDAY</span>
+                <div class="main-date">
+                    <span class="month">MAY</span>
+                    <span class="number">13</span>
+                    <span class="year">2026</span>
+                </div>
+                <span class="time">AT 9:45 AM</span>
+            </div>
+        </section>
+
+        <section class="timer-container fade-in">
+            <h3>Counting Down to the Big Day</h3>
+            <div id="timer">
+                <div class="time-box"><span id="days">00</span><p>Days</p></div>
+                <div class="time-box"><span id="hours">00</span><p>Hrs</p></div>
+                <div class="time-box"><span id="minutes">00</span><p>Min</p></div>
+                <div class="time-box"><span id="seconds">00</span><p>Sec</p></div>
+            </div>
+        </section>
+
+        <section class="venue fade-in">
+            <h2>AT SANJO AUDITORIUM</h2>
+            <p>Opp. St. Joseph’s Syro-Malabar Church,</p>
+            <p>Chunangamvely, Aluva</p>
+            
+            <a href="https://www.google.com/maps/search/?api=1&query=10.089633,76.3813082" target="_blank" class="btn">GET DIRECTIONS</a>
+        </section>
+    </div>
+
+    <script>
+        // Set the date we're counting down to
+        const countDownDate = new Date("May 13, 2026 09:45:00").getTime();
+
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("timer").innerHTML = "The Ceremony Has Begun!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
