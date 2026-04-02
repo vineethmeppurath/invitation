@@ -3,72 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kavya & Vineeth - Engagement</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <title>Invitation | Kavya & Vineeth</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --purple-accent: #6a4c93;
+            --dark-text: #2d3436;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body, html {
+            height: 100%;
+            font-family: 'Lato', sans-serif;
+            color: var(--dark-text);
+            background-color: #fff;
+        }
+
+        /* FIXED BACKGROUND */
+        .bg-fixed {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -1;
+            /* CHANGE 'bg.png' TO YOUR ACTUAL FILE NAME (e.g. 'bg.jpg') IF DIFFERENT */
+            background: url('bg.png') no-repeat center center;
+            background-size: cover;
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .content {
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            margin-top: 100px;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .wreath-area {
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .om { font-size: 2.5rem; color: #5d4037; margin-bottom: 10px; }
+        .names { font-family: 'Great Vibes', cursive; font-size: 4.5rem; color: #000; line-height: 1; }
+
+        /* DATE SECTION */
+        .date-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 40px 0;
+        }
+
+        .line { border-bottom: 2px solid #ddd; width: 80px; margin: 0 15px; }
+
+        .date-main { font-family: 'Playfair Display', serif; font-size: 3.5rem; line-height: 1; }
+        .m-y { font-size: 0.8rem; letter-spacing: 4px; color: var(--purple-accent); font-weight: bold; }
+
+        /* TIMER */
+        #timer { display: flex; justify-content: center; gap: 15px; margin: 30px 0; }
+        .t-box { background: rgba(255, 255, 255, 0.8); padding: 10px; border-radius: 8px; min-width: 60px; border: 1px solid #eee; }
+        .t-box span { display: block; font-size: 1.4rem; font-weight: 700; color: var(--purple-accent); }
+        .t-box p { font-size: 0.6rem; text-transform: uppercase; }
+
+        /* MAP & BUTTON */
+        .btn-dir {
+            display: inline-block;
+            background: var(--purple-accent);
+            color: white;
+            padding: 14px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(106, 76, 147, 0.3);
+        }
+
+        .map-frame {
+            height: 300px;
+            width: 100%;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid #ddd;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 500px) {
+            .names { font-size: 3.2rem; }
+            .wreath-area { height: 280px; }
+            .content { margin-top: 60px; }
+        }
+    </style>
 </head>
 <body>
 
-    <div class="container">
-        <header class="fade-in">
-            <p class="sub-text">TOGETHER WITH THEIR FAMILIES</p>
-            <h1 class="names">Kavya & Vineeth</h1>
-            <p class="invite-text">cordially invite you to join the occasion<br>of their engagement ceremony on</p>
-        </header>
+    <div class="bg-fixed"></div>
 
-        <section class="details slide-up">
-            <div class="date-row">
-                <span class="day">WEDNESDAY</span>
-                <div class="main-date">
-                    <span class="month">MAY</span>
-                    <span class="number">13</span>
-                    <span class="year">2026</span>
-                </div>
-                <span class="time">AT 9:45 AM</span>
-            </div>
-        </section>
-
-        <section class="timer-container fade-in">
-            <h3>Counting Down to the Big Day</h3>
-            <div id="timer">
-                <div class="time-box"><span id="days">00</span><p>Days</p></div>
-                <div class="time-box"><span id="hours">00</span><p>Hrs</p></div>
-                <div class="time-box"><span id="minutes">00</span><p>Min</p></div>
-                <div class="time-box"><span id="seconds">00</span><p>Sec</p></div>
-            </div>
-        </section>
-
-        <section class="venue fade-in">
-            <h2>AT SANJO AUDITORIUM</h2>
-            <p>Opp. St. Joseph’s Syro-Malabar Church,</p>
-            <p>Chunangamvely, Aluva</p>
+    <div class="wrapper">
+        <main class="content">
             
-            <a href="https://www.google.com/maps/search/?api=1&query=10.089633,76.3813082" target="_blank" class="btn">GET DIRECTIONS</a>
-        </section>
+            <div class="wreath-area">
+                <div class="om">🕉</div>
+                <p style="letter-spacing: 3px; font-size: 0.7rem; color: #666; margin-bottom: 10px;">TOGETHER WITH THEIR FAMILIES</p>
+                <h1 class="names">Kavya & Vineeth</h1>
+            </div>
+
+            <p style="font-style: italic; color: #888; margin: 20px 0;">cordially invite you to the engagement ceremony on</p>
+
+            <section class="date-row">
+                <div style="font-weight:700; font-size: 0.8rem;">WEDNESDAY</div>
+                <div class="line"></div>
+                <div>
+                    <p class="m-y">MAY</p>
+                    <p class="date-main">13</p>
+                    <p class="m-y">2026</p>
+                </div>
+                <div class="line"></div>
+                <div style="font-weight:700; font-size: 0.8rem;">AT 9:45 AM</div>
+            </section>
+
+            <div id="timer">
+                <div class="t-box"><span id="d">00</span><p>Days</p></div>
+                <div class="t-box"><span id="h">00</span><p>Hrs</p></div>
+                <div class="t-box"><span id="m">00</span><p>Min</p></div>
+                <div class="t-box"><span id="s">00</span><p>Sec</p></div>
+            </div>
+
+            <div style="margin-top: 50px;">
+                <h2 style="font-family:'Playfair Display';">SANJO AUDITORIUM</h2>
+                <p style="font-size: 0.9rem; color: #777; margin-bottom: 20px;">Opp. St. Joseph’s Church, Chunangamvely, Aluva</p>
+                
+                <a href="https://maps.app.goo.gl/uFpndv744L6nCenp8" target="_blank" class="btn-dir">GET DIRECTIONS</a>
+
+                <div class="map-frame">
+                    <iframe 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0" 
+                        loading="lazy" 
+                        allowfullscreen 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.3243292410636!2d76.36015527503112!3d10.072120372074314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0809278065ad77%3A0x6b4be934c98f8e02!2sSanjo%20Auditorium!5e0!3m2!1sen!2sin!4v1712050000000!5m2!1sen!2sin">
+                    </iframe>
+                </div>
+            </div>
+        </main>
     </div>
 
     <script>
-        // Set the date we're counting down to
-        const countDownDate = new Date("May 13, 2026 09:45:00").getTime();
-
-        const x = setInterval(function() {
+        const target = new Date("May 13, 2026 09:45:00").getTime();
+        setInterval(() => {
             const now = new Date().getTime();
-            const distance = countDownDate - now;
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById("days").innerHTML = days;
-            document.getElementById("hours").innerHTML = hours;
-            document.getElementById("minutes").innerHTML = minutes;
-            document.getElementById("seconds").innerHTML = seconds;
-
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("timer").innerHTML = "The Ceremony Has Begun!";
-            }
+            const diff = target - now;
+            document.getElementById("d").innerText = Math.max(0, Math.floor(diff / (1000*60*60*24)));
+            document.getElementById("h").innerText = Math.max(0, Math.floor((diff % (1000*60*60*24)) / (1000*60*60)));
+            document.getElementById("m").innerText = Math.max(0, Math.floor((diff % (1000*60*60)) / (1000*60)));
+            document.getElementById("s").innerText = Math.max(0, Math.floor((diff % (1000*60)) / 1000));
         }, 1000);
     </script>
 </body>
