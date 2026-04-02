@@ -1,0 +1,106 @@
+:root {
+    --primary-gold: #b38b59;
+    --bg-cream: #fdfaf5;
+    --text-dark: #4a4a4a;
+}
+
+body {
+    background-color: var(--bg-cream);
+    color: var(--text-dark);
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* Minimal background pattern */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: radial-gradient(var(--primary-gold) 0.5px, transparent 0.5px);
+    background-size: 30px 30px;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.container {
+    max-width: 500px;
+    padding: 40px 20px;
+    border: 1px solid rgba(179, 139, 89, 0.2);
+    background: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.names {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5rem;
+    color: var(--primary-gold);
+    margin: 10px 0;
+}
+
+.sub-text { letter-spacing: 3px; font-size: 0.8rem; }
+
+.date-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 0;
+    border-top: 1px solid var(--primary-gold);
+    border-bottom: 1px solid var(--primary-gold);
+    padding: 15px 0;
+}
+
+.main-date {
+    display: flex;
+    flex-direction: column;
+}
+
+.number { font-size: 2.5rem; font-weight: bold; font-family: 'Playfair Display'; }
+
+.timer-container { margin: 40px 0; }
+
+#timer {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.time-box {
+    background: var(--bg-cream);
+    padding: 10px;
+    min-width: 60px;
+    border-radius: 5px;
+}
+
+.time-box span { display: block; font-size: 1.5rem; font-weight: bold; color: var(--primary-gold); }
+.time-box p { font-size: 0.7rem; margin: 0; text-transform: uppercase; }
+
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 25px;
+    background: var(--primary-gold);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.btn:hover { transform: scale(1.05); background: #967348; }
+
+/* Animations */
+.fade-in { animation: fadeIn 2s ease-in; }
+.slide-up { animation: slideUp 1.5s ease-out; }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { 
+    from { opacity: 0; transform: translateY(20px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
