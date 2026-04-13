@@ -1,200 +1,341 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Kavya & Vineeth - Engagement</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #9ad4cd;
+            --primary-dark: #5c9792;
+            --accent: #f8c8dc; 
+            --bg-color: #f6f9f9;
+            --surface: #ffffff;
+            --text-dark: #374a44;
+            --text-muted: #82988e;
+            --font-main: 'Poppins', sans-serif;
+        }
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Kavya &amp; Vineeth Engagement</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "on-secondary-fixed": "#304434",
-                        "tertiary": "#785a1a",
-                        "surface-container-highest": "#dfe4dc",
-                        "secondary-dim": "#445847",
-                        "primary-dim": "#395a4a",
-                        "secondary-fixed": "#d1e9d2",
-                        "tertiary-fixed-dim": "#ecc479",
-                        "on-surface": "#2e342e",
-                        "on-primary-fixed-variant": "#426252",
-                        "on-primary-fixed": "#264637",
-                        "tertiary-dim": "#6b4e0e",
-                        "error": "#a73b21",
-                        "background": "#f9faf5",
-                        "on-tertiary-container": "#624604",
-                        "on-error-container": "#6e1400",
-                        "outline": "#767c76",
-                        "surface-container-high": "#e5e9e2",
-                        "outline-variant": "#aeb3ac",
-                        "on-tertiary-fixed": "#4a3400",
-                        "secondary": "#4f6453",
-                        "on-tertiary": "#fff8f1",
-                        "primary": "#456656",
-                        "inverse-on-surface": "#9c9d99",
-                        "surface-variant": "#dfe4dc",
-                        "secondary-fixed-dim": "#c3dac5",
-                        "on-secondary-container": "#425746",
-                        "on-primary-container": "#385849",
-                        "surface": "#f9faf5",
-                        "tertiary-container": "#fbd185",
-                        "inverse-primary": "#daffea",
-                        "surface-container": "#ebefe8",
-                        "error-container": "#fd795a",
-                        "surface-container-low": "#f2f4ee",
-                        "primary-fixed": "#c7ebd7",
-                        "on-secondary": "#e8ffe9",
-                        "primary-container": "#c7ebd7",
-                        "tertiary-fixed": "#fbd185",
-                        "surface-bright": "#f9faf5",
-                        "on-background": "#2e342e",
-                        "surface-tint": "#456656",
-                        "on-surface-variant": "#5b615a",
-                        "primary-fixed-dim": "#b9ddc9",
-                        "on-primary": "#e6ffef",
-                        "secondary-container": "#d1e9d2",
-                        "on-tertiary-fixed-variant": "#6c500f",
-                        "error-dim": "#791903",
-                        "inverse-surface": "#0c0f0c",
-                        "surface-container-lowest": "#ffffff",
-                        "surface-dim": "#d6dcd4",
-                        "on-secondary-fixed-variant": "#4c604f",
-                        "on-error": "#fff7f6"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.125rem",
-                        "lg": "0.25rem",
-                        "xl": "0.5rem",
-                        "full": "0.75rem"
-                    },
-                    "fontFamily": {
-                        "headline": ["Noto Serif"],
-                        "body": ["Manrope"],
-                        "label": ["Plus Jakarta Sans"]
-                    }
-                },
-            },
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body, html {
+            width: 100%;
+            font-family: var(--font-main);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            background-color: var(--bg-color);
+            -webkit-font-smoothing: antialiased;
         }
-    </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+
+        /* --- BACKGROUND & CONTENT --- */
+        .animated-bg {
+            position: fixed;
+            top: 0; left: 0; 
+            width: 100vw; height: 100vh;
+            background: linear-gradient(135deg, #e4eff0 0%, #fcf5f7 100%);
+            z-index: -1;
         }
-        body {
+
+        .main-wrapper {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 15px; 
+            position: relative;
+        }
+
+        .content-card {
+            width: 100%;
+            max-width: 440px;
+            text-align: center;
+            padding: 45px 30px;
+            background: var(--surface);
+            border-radius: 28px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.02);
+            position: relative;
+            border: 1px solid rgba(255,255,255,0.5); /* Soft glass effect */
+        }
+
+        .animate-text {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .delay-0 { animation-delay: 0.2s; }
+        .delay-1 { animation-delay: 0.4s; }
+        .delay-2 { animation-delay: 0.6s; }
+        .delay-3 { animation-delay: 0.8s; }
+        .delay-4 { animation-delay: 1.0s; }
+        .delay-5 { animation-delay: 1.2s; }
+        .delay-6 { animation-delay: 1.4s; }
+        .delay-7 { animation-delay: 1.6s; }
+
+        .names-container {
+            width: 100%;
+            padding: 10px 5px; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 5px;
+        }
+
+        .names {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(40px, 10vw, 46px); 
+            line-height: 1.2; 
+            color: var(--primary-dark);
+            display: inline-block;
+            padding: 5px 0;
+        }
+
+        .rings-icon {
+            width: 32px;
+            height: auto;
+            display: inline-block;
+            vertical-align: middle;
+            opacity: 0.7;
+        }
+
+        .header-text { 
+            font-family: var(--font-main); 
+            letter-spacing: 1.5px; 
+            font-size: 0.7rem; 
+            color: var(--text-muted); 
+            font-weight: 500; 
+            text-transform: uppercase;
+        }
+        .invite-msg { 
+            font-size: 0.85rem; 
+            margin: 15px 0 20px; 
+            color: var(--text-muted); 
+            line-height: 1.6; 
+            font-weight: 400;
+        }
+
+        .month-year { 
+            letter-spacing: 2.5px; 
+            font-weight: 600; 
+            font-size: 0.85rem; 
+            color: var(--primary-dark); 
+            text-transform: uppercase;
+        }
+        .date-row { 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            gap: 15px; 
+            margin: 12px 0 16px; 
+        }
+        .big-date { 
+            font-size: 3rem; 
+            color: var(--primary-dark); 
+            font-weight: 600; 
+            line-height: 1; 
+            border-left: 2px solid rgba(0,0,0,0.04);
+            border-right: 2px solid rgba(0,0,0,0.04);
+            padding: 0 22px;
+        }
+        .time-info { 
+            font-size: 0.65rem; 
+            font-weight: 600; 
+            color: var(--text-muted); 
+            width: 80px; 
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .venue { 
+            font-size: 0.85rem; 
+            line-height: 1.6; 
+            color: var(--text-dark); 
+            margin: 25px 0; 
+        }
+        .venue b { 
+            display: block; 
+            font-size: 0.95rem; 
+            margin-bottom: 6px; 
+            font-weight: 600;
+            color: var(--primary-dark);
+            letter-spacing: 0.5px;
+        }
+
+        .countdown { 
+            display: flex; 
+            justify-content: center; 
+            gap: 12px; 
+            margin-bottom: 30px; 
+        }
+        .unit { 
+            background: var(--bg-color); 
+            padding: 12px 8px; 
+            min-width: 62px; 
+            border-radius: 16px; 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(0, 0, 0, 0.015);
+            transition: transform 0.3s ease;
+        }
+        .unit:hover {
+            transform: translateY(-2px);
+        }
+        .unit span { 
+            font-size: 1.3rem; 
+            font-weight: 600; 
+            color: var(--primary-dark); 
+            display: block; 
+            margin-bottom: 2px;
+        }
+        .unit label { 
+            font-size: 0.55rem; 
+            text-transform: uppercase; 
+            color: var(--text-muted); 
+            letter-spacing: 1px; 
+            font-weight: 500;
+        }
+
+        .btn-box { margin-bottom: 20px; }
+        .btn {
+            background: var(--primary-dark);
+            color: #ffffff;
+            padding: 15px 32px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border-radius: 30px;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 16px rgba(92, 151, 146, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .btn:hover {
+            background: #4a807a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(92, 151, 146, 0.5);
+        }
+
+        .map-container {
+            width: 100%;
+            height: 160px; 
+            border-radius: 20px;
             overflow: hidden;
-            background-color: #f9faf5;
+            margin-top: 10px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+            border: 1px solid #ebf2f2;
+        }
+        iframe { width: 100%; height: 100%; border: none; }
+
+        @media (max-width: 380px) {
+            .names { font-size: 32px; }
+            .content-card { padding: 35px 20px; }
+            .big-date { font-size: 2.4rem; padding: 0 15px; }
+            .unit { min-width: 54px; padding: 10px 5px; }
+            .map-container { height: 130px; }
         }
     </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
-<body class="font-body text-on-surface flex items-center justify-center min-h-screen p-4 sm:p-6 lg:p-8">
-<!-- Engagement Card Container -->
-<main class="relative w-full max-w-[440px] aspect-[9/19] sm:aspect-auto sm:h-[840px] bg-surface-container-lowest rounded-[2rem] shadow-2xl overflow-hidden flex flex-col border border-outline-variant/10">
-<!-- Hero Image Section -->
-<div class="relative h-[42%] overflow-hidden">
-<img class="w-full h-full object-cover" data-alt="Exquisite crystal chandelier hanging amidst a lush arrangement of white orchids and sage green eucalyptus leaves, soft morning light filtering through." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEXB-GZ_rdzDJJmEOh4S22HS3XrvgYP1-InWwKxLIHyu2KnLdCk0byLDSXee9pcAb5qrdxLSV7TiImvLlbQhDrhlktCko76wrTxfzmDR2nmiMGjYrvtmGt4TYI7XPwmVqYt-uTnG0KbmrcKLa8U0mzxtJJEPq86LvEDy7LOtGPMbwSxB6_E4MhJICCL-Xzs0XfnE8kPp9NCsjSC84TaGVgPVuQyGSV1nSqdD4xF614ntkldWRahJsUaYUWC8-T4vIDqbFHDR48SEc"/>
-<!-- Soft Overlay Gradient -->
-<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-60"></div>
-<!-- Floating Name Header -->
-<div class="absolute bottom-6 left-0 right-0 text-center px-6">
-<h1 class="font-headline text-[2.75rem] leading-none text-white tracking-tight mb-2">
-                    Kavya <span class="font-headline italic text-primary">&amp;</span> Vineeth
-                </h1>
-<p class="font-label text-[0.65rem] uppercase tracking-[0.25em] text-gray-100ont-semibold">
-                    Invitation to join their engagement
-                </p>
-</div>
-</div>
-<!-- Content Section -->
-<div class="flex-1 px-8 pt-4 pb-8 flex flex-col justify-between items-center text-center">
-<!-- Countdown Timer -->
-<div class="grid grid-cols-4 gap-3 w-full">
-<div class="bg-primary-container/40 p-3 rounded-2xl">
-<span id="days" class="block font-headline text-2xl text-on-primary-container font-bold">00</span>
-<span class="block font-label text-[0.6rem] uppercase tracking-widest text-on-primary-container/70">Days</span>
-</div>
-<div class="bg-primary-container/40 p-3 rounded-2xl">
-<span id="hours" class="block font-headline text-2xl text-on-primary-container font-bold">00</span>
-<span class="block font-label text-[0.6rem] uppercase tracking-widest text-on-primary-container/70">Hrs</span>
-</div>
-<div class="bg-primary-container/40 p-3 rounded-2xl">
-<span id="mins" class="block font-headline text-2xl text-on-primary-container font-bold">00</span>
-<span class="block font-label text-[0.6rem] uppercase tracking-widest text-on-primary-container/70">Min</span>
-</div>
-<div class="bg-primary-container/40 p-3 rounded-2xl">
-<span id="secs" class="block font-headline text-2xl text-on-primary-container font-bold">00</span>
-<span class="block font-label text-[0.6rem] uppercase tracking-widest text-on-primary-container/70">Sec</span>
-</div>
-</div>
-<!-- Event Details -->
-<div class="my-6 space-y-3">
-<div class="flex items-center justify-center gap-2 text-primary">
-<span class="material-symbols-outlined text-sm">calendar_today</span>
-<span class="font-headline text-lg font-medium">May 13, 2026</span>
-<span class="w-1.5 h-1.5 rounded-full bg-outline-variant/40"></span>
-<span class="font-headline text-lg font-medium">9:45 AM</span>
-</div>
-<div class="space-y-1">
-<h3 class="font-body font-bold text-on-surface text-lg">Sanjo Auditorium</h3>
-<p class="font-body text-sm text-on-surface-variant">Opp. St.Joseph's Church,</p>
-<p class="font-body text-sm text-on-surface-variant">Chunangamvely, Aluva</p>
-</div>
-</div>
-<!-- Asymmetric Map & Action Section -->
-<div class="w-full flex flex-col gap-4">
-<div class="relative w-full h-32 rounded-3xl overflow-hidden shadow-sm outline outline-1 outline-outline-variant/20">
-<iframe class="w-full h-full border-none" src="https://maps.google.com/maps?q=10.0897177,76.381047&hl=en&z=17&output=embed" allowfullscreen="" loading="lazy"></iframe>
-</div>
-<!-- Primary Action -->
-<a href="https://www.google.com/maps/dir/?api=1&destination=10.0897177,76.381047" target="_blank" class="w-full bg-primary hover:bg-primary-dim text-on-primary py-4 px-6 rounded-full flex items-center justify-center gap-2 transition-all active:scale-[0.98] shadow-md shadow-primary/10">
-<span class="material-symbols-outlined text-xl">directions_car</span>
-<span class="font-label text-sm font-bold tracking-widest uppercase">Get Directions</span>
-</a>
-</div>
-<!-- Decorative Footer -->
-<div class="mt-4 opacity-30 flex items-center gap-4 w-full justify-center">
-<div class="h-[1px] flex-1 bg-outline-variant"></div>
-<span class="material-symbols-outlined text-xs">auto_awesome</span>
-<div class="h-[1px] flex-1 bg-outline-variant"></div>
-</div>
-</div>
-<!-- Corner Accents -->
-<div class="absolute top-0 right-0 w-32 h-32 opacity-10 pointer-events-none transform translate-x-12 -translate-y-12">
-<div class="w-full h-full border-[1.5px] border-primary rounded-full"></div>
-</div>
-<div class="absolute bottom-0 left-0 w-24 h-24 opacity-10 pointer-events-none transform -translate-x-8 translate-y-8">
-<div class="w-full h-full border-[1.5px] border-primary rounded-full"></div>
-</div>
-</main>
-<script>
-    const targetDate = new Date("May 13, 2026 09:45:00").getTime();
+</head>
+<body>
 
-    function updateTimer() {
-        const now = new Date().getTime();
-        const diff = targetDate - now;
 
-        if (diff < 0) return;
 
-        const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const s = Math.floor((diff % (1000 * 60)) / 1000);
+    <div class="animated-bg"></div>
 
-        document.getElementById("days").innerText = d.toString().padStart(2, '0');
-        document.getElementById("hours").innerText = h.toString().padStart(2, '0');
-        document.getElementById("mins").innerText = m.toString().padStart(2, '0');
-        document.getElementById("secs").innerText = s.toString().padStart(2, '0');
-    }
-    
-    setInterval(updateTimer, 1000);
-    updateTimer();
-</script>
-</body></html>
+    <div class="main-wrapper">
+        <main class="content-card">
+            
+            <div class="animate-text">
+                <!-- <div class="om">
+                    <img src="ganesha.png" alt="Ganesha" class="ganesha-icon">
+                </div> -->
+                <p class="header-text">Together with their families</p>
+            </div>
+
+            <div class="animate-text delay-0">
+                <div class="names-container">
+                    <h1 class="names">Kavya</h1>
+                    <img src="rings.png" alt="Rings" class="rings-icon">
+                    <h1 class="names">Vineeth</h1>
+                </div>
+            </div>
+
+            <div class="animate-text delay-1">
+                <p class="invite-msg">cordially invite you to join them<br>at their engagement ceremony on</p>
+            </div>
+
+            <div class="animate-text delay-2">
+                <div class="month-year">MAY 2026</div>
+                <div class="date-row">
+                    <div class="time-info">WEDNESDAY</div>
+                    <div class="big-date">13</div>
+                    <div class="time-info">9:45 AM</div>
+                </div>
+            </div>
+
+            <div class="venue animate-text delay-3">
+                <b>AT SANJO AUDITORIUM</b>
+                Opp. St. Joseph’s Church,<br>
+                Chunangamvely, Aluva
+            </div>
+
+            <div id="countdown" class="countdown animate-text delay-4">
+                <div class="unit"><span id="days">00</span><label>Days</label></div>
+                <div class="unit"><span id="hours">00</span><label>Hrs</label></div>
+                <div class="unit"><span id="mins">00</span><label>Min</label></div>
+                <div class="unit"><span id="secs">00</span><label>Sec</label></div>
+            </div>
+
+            <div class="btn-box animate-text delay-5">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=10.0897177,76.381047" target="_blank" class="btn">Get Directions</a>
+            </div>
+
+            <div class="animate-text delay-6">
+                <div class="map-container">
+                    <iframe src="https://maps.google.com/maps?q=10.0897177,76.381047&hl=en&z=17&output=embed" 
+                    allowfullscreen="" 
+                    loading="lazy"></iframe>
+                </div>
+            </div>
+            
+        </main>
+    </div>
+
+    <script>
+
+
+        const targetDate = new Date("May 13, 2026 09:45:00").getTime();
+
+        function updateTimer() {
+            const now = new Date().getTime();
+            const diff = targetDate - now;
+
+            if (diff < 0) {
+                document.getElementById("countdown").innerHTML = "<b style='color:var(--bottle-green)'>HAPPENING NOW!</b>";
+                return;
+            }
+
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = d.toString().padStart(2, '0');
+            document.getElementById("hours").innerText = h.toString().padStart(2, '0');
+            document.getElementById("mins").innerText = m.toString().padStart(2, '0');
+            document.getElementById("secs").innerText = s.toString().padStart(2, '0');
+        }
+        
+        setInterval(updateTimer, 1000);
+        updateTimer();
+    </script>
+</body>
+</html>
