@@ -1,217 +1,200 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Kavya & Vineeth Engagement</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bottle-green: #00332a;
-            --forest-green: #014d40;
-            --royal-gold: #d4af37;
-            --cream-bg: rgba(255, 253, 240, 0.95);
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kavya &amp; Vineeth Engagement</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#304434",
+                        "tertiary": "#785a1a",
+                        "surface-container-highest": "#dfe4dc",
+                        "secondary-dim": "#445847",
+                        "primary-dim": "#395a4a",
+                        "secondary-fixed": "#d1e9d2",
+                        "tertiary-fixed-dim": "#ecc479",
+                        "on-surface": "#2e342e",
+                        "on-primary-fixed-variant": "#426252",
+                        "on-primary-fixed": "#264637",
+                        "tertiary-dim": "#6b4e0e",
+                        "error": "#a73b21",
+                        "background": "#f9faf5",
+                        "on-tertiary-container": "#624604",
+                        "on-error-container": "#6e1400",
+                        "outline": "#767c76",
+                        "surface-container-high": "#e5e9e2",
+                        "outline-variant": "#aeb3ac",
+                        "on-tertiary-fixed": "#4a3400",
+                        "secondary": "#4f6453",
+                        "on-tertiary": "#fff8f1",
+                        "primary": "#456656",
+                        "inverse-on-surface": "#9c9d99",
+                        "surface-variant": "#dfe4dc",
+                        "secondary-fixed-dim": "#c3dac5",
+                        "on-secondary-container": "#425746",
+                        "on-primary-container": "#385849",
+                        "surface": "#f9faf5",
+                        "tertiary-container": "#fbd185",
+                        "inverse-primary": "#daffea",
+                        "surface-container": "#ebefe8",
+                        "error-container": "#fd795a",
+                        "surface-container-low": "#f2f4ee",
+                        "primary-fixed": "#c7ebd7",
+                        "on-secondary": "#e8ffe9",
+                        "primary-container": "#c7ebd7",
+                        "tertiary-fixed": "#fbd185",
+                        "surface-bright": "#f9faf5",
+                        "on-background": "#2e342e",
+                        "surface-tint": "#456656",
+                        "on-surface-variant": "#5b615a",
+                        "primary-fixed-dim": "#b9ddc9",
+                        "on-primary": "#e6ffef",
+                        "secondary-container": "#d1e9d2",
+                        "on-tertiary-fixed-variant": "#6c500f",
+                        "error-dim": "#791903",
+                        "inverse-surface": "#0c0f0c",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#d6dcd4",
+                        "on-secondary-fixed-variant": "#4c604f",
+                        "on-error": "#fff7f6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                },
+            },
         }
-
-        /* Prevent all scrolling */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html, body { 
-            height: 100%; 
-            width: 100%; 
-            overflow: hidden; 
-            position: fixed; 
-        }
-
-        body {
-            font-family: 'Lora', serif;
-            background-color: #fdf5e6;
-            background-image: url('bg.png');
-            background-size: cover;
-            background-position: center;
-        }
-
-        /* Main Container: Forced to 100% of the screen height */
-        .main-wrapper {
-            height: 100vh;
-            width: 100vw;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 10px;
-            z-index: 5;
-        }
-
-        .content-card {
-            height: 96%; /* Leave a small gap around edges */
-            width: 100%;
-            max-width: 500px;
-            background: var(--cream-bg);
-            border: 2px solid var(--royal-gold);
-            border-radius: 20px;
-            padding: 15px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly; /* Evenly spaces items to fill height */
-            align-items: center;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 34, 28, 0.3);
-            animation: fadeIn 1.2s ease-out;
-        }
-
-        @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
-
-        /* --- TEXT ANIMATIONS --- */
-        .animate { opacity: 0; transform: translateY(10px); animation: fadeUp 0.8s forwards; }
-        .delay-1 { animation-delay: 0.3s; }
-        .delay-2 { animation-delay: 0.6s; }
-        .delay-3 { animation-delay: 0.9s; }
-
-        @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
-
-        .om { font-size: 30px; color: var(--bottle-green); }
-
-        .header-text { 
-            font-family: 'Cinzel', serif; 
-            font-size: 11px; 
-            letter-spacing: 2px; 
-            color: var(--forest-green); 
-        }
-
-        /* FIXED: No clipping for cursive names */
-        .names-container {
-            width: 100%;
-            padding: 10px 0;
-            overflow: visible;
-        }
-
-        .names {
-            font-family: 'Great Vibes', cursive;
-            font-size: clamp(45px, 11vw, 65px);
-            line-height: 1.4;
-            padding: 0 20px;
-            background: linear-gradient(45deg, var(--bottle-green), var(--royal-gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: inline-block;
-            animation: pulse 3s infinite ease-in-out;
-        }
-
-        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.03); } }
-
-        .ampersand { font-size: 24px; color: var(--royal-gold); display: block; margin: -5px 0; }
-
-        .invite-msg { font-size: 14px; font-style: italic; color: var(--bottle-green); line-height: 1.4; }
-
-        /* Compact Date Section */
-        .date-box { width: 100%; }
-        .month { font-family: 'Cinzel', serif; font-size: 16px; font-weight: bold; letter-spacing: 4px; color: var(--bottle-green); }
-        .date-row { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 5px 0; }
-        .line { height: 1px; background: var(--royal-gold); flex: 1; max-width: 40px; }
-        .big-date { font-family: 'Cinzel', serif; font-size: 40px; font-weight: bold; padding: 0 15px; border-left: 2px solid var(--royal-gold); border-right: 2px solid var(--royal-gold); color: var(--bottle-green); }
-        .time { font-family: 'Cinzel', serif; font-size: 12px; font-weight: bold; color: var(--forest-green); }
-
-        .venue { font-size: 13px; color: var(--text-dark); line-height: 1.3; }
-        .venue b { font-family: 'Cinzel', serif; font-size: 16px; color: var(--bottle-green); display: block; margin-bottom: 3px; }
-
-        /* Compact Countdown */
-        .countdown { display: flex; gap: 8px; }
-        .unit { background: var(--bottle-green); padding: 8px; min-width: 55px; border-radius: 10px; border: 1px solid var(--royal-gold); }
-        .unit span { font-size: 18px; font-weight: bold; color: var(--royal-gold); display: block; }
-        .unit label { font-size: 8px; text-transform: uppercase; color: #fff; opacity: 0.8; }
-
-        .btn {
-            background: var(--bottle-green);
-            color: var(--royal-gold);
-            padding: 10px 25px;
-            text-decoration: none;
-            font-family: 'Cinzel', serif;
-            font-size: 12px;
-            font-weight: bold;
-            border: 1px solid var(--royal-gold);
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-
-        /* Map scaled to fit remaining space */
-        .map-container {
-            width: 100%;
-            height: 20%; /* Dynamically takes up 20% of the card height */
-            min-height: 120px;
-            border: 2px solid var(--royal-gold);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        iframe { width: 100%; height: 100%; border: none; }
-    </style>
-</head>
-<body>
-
-    <div class="main-wrapper">
-        <div class="content-card">
-            
-            <div class="animate om">ॐ</div>
-
-            <div class="animate delay-1">
-                <p class="header-text">Together with their families</p>
-                <div class="names-container">
-                    <h1 class="names">Kavya <span class="ampersand">&</span> Vineeth</h1>
-                </div>
-            </div>
-
-            <div class="animate delay-2">
-                <p class="invite-msg">cordially invite you to the<br>engagement ceremony of</p>
-                
-                <div class="date-box">
-                    <div class="month">MAY 2026</div>
-                    <div class="date-row">
-                        <div class="line"></div>
-                        <div class="time">WED</div>
-                        <div class="big-date">13</div>
-                        <div class="time">9:45 AM</div>
-                        <div class="line"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="animate delay-3">
-                <div class="venue">
-                    <b>SANJO AUDITORIUM</b>
-                    Chunangamvely, Aluva
-                </div>
-
-                <div class="countdown">
-                    <div class="unit"><span id="days">00</span><label>Days</label></div>
-                    <div class="unit"><span id="hours">00</span><label>Hrs</label></div>
-                    <div class="unit"><span id="mins">00</span><label>Min</label></div>
-                    <div class="unit"><span id="secs">00</span><label>Sec</label></div>
-                </div>
-
-                <div style="margin-top: 10px;">
-                    <a href="https://www.google.com/maps/dir/?api=1&destination=10.0894368,76.3809619" target="_blank" class="btn">Directions</a>
-                </div>
-            </div>
-
-            <div class="map-container animate delay-3">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.3475!2d76.3809619!3d10.0894368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDA1JzIyLjAiTiA3NsKwMjInNTEuNSJF!5e0!3m2!1sen!2sin!4v1640000000000"></iframe>
-            </div>
-
-        </div>
-    </div>
-
-    <script>
-        const target = new Date("May 13, 2026 09:45:00").getTime();
-        function updateTimer() {
-            const now = new Date().getTime();
-            const diff = target - now;
-            if (diff < 0) return;
-            document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
-            document.getElementById("hours").innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
-            document.getElementById("mins").innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
-            document.getElementById("secs").innerText = Math.floor((diff % (1000 * 60)) / 1000).toString().padStart(2, '0');
-        }
-        setInterval(updateTimer, 1000);
-        updateTimer();
     </script>
-</body>
-</html>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            overflow: hidden;
+            background-color: #f9faf5;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body text-on-surface flex items-center justify-center min-h-screen p-4 sm:p-6 lg:p-8">
+<!-- Engagement Card Container -->
+<main class="relative w-full max-w-[440px] aspect-[9/19] sm:aspect-auto sm:h-[840px] bg-surface-container-lowest rounded-[2rem] shadow-2xl overflow-hidden flex flex-col border border-outline-variant/10">
+<!-- Hero Image Section -->
+<div class="relative h-[42%] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Exquisite crystal chandelier hanging amidst a lush arrangement of white orchids and sage green eucalyptus leaves, soft morning light filtering through." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEXB-GZ_rdzDJJmEOh4S22HS3XrvgYP1-InWwKxLIHyu2KnLdCk0byLDSXee9pcAb5qrdxLSV7TiImvLlbQhDrhlktCko76wrTxfzmDR2nmiMGjYrvtmGt4TYI7XPwmVqYt-uTnG0KbmrcKLa8U0mzxtJJEPq86LvEDy7LOtGPMbwSxB6_E4MhJICCL-Xzs0XfnE8kPp9NCsjSC84TaGVgPVuQyGSV1nSqdD4xF614ntkldWRahJsUaYUWC8-T4vIDqbFHDR48SEc"/>
+<!-- Soft Overlay Gradient -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-60"></div>
+<!-- Floating Name Header -->
+<div class="absolute bottom-6 left-0 right-0 text-center px-6">
+<h1 class="font-headline text-[2.75rem] leading-none text-white tracking-tight mb-2">
+                    Kavya <span class="font-headline italic text-primary">&amp;</span> Vineeth
+                </h1>
+<p class="font-label text-[0.65rem] uppercase tracking-[0.25em] text-gray-100ont-semibold">
+                    Invitation to join their engagement
+                </p>
+</div>
+</div>
+<!-- Content Section -->
+<div class="flex-1 px-8 pt-4 pb-8 flex flex-col justify-between items-center text-center">
+<!-- Countdown Timer -->
+<div class="grid grid-cols-4 gap-3 w-full">
+<div class="bg-primary-container/40 p-3 rounded-2xl">
+<span id="days" class="block font-headline text-2xl text-on-primary-container font-bold">00</span>
+<span class="block font-label text-[0.6rem] uppercase tracking-widest text-on-primary-container/70">Days</span>
+</div>
+<div class="bg-primary-container/40 p-3 rounded-2xl">
+<span id="hours" class="block font-headline text-2xl text-on-primary-container font-bold">00</span>
+<span class="block font-label text-[0.6rem] uppercase tracking-widest text-on-primary-container/70">Hrs</span>
+</div>
+<div class="bg-primary-container/40 p-3 rounded-2xl">
+<span id="mins" class="block font-headline text-2xl text-on-primary-container font-bold">00</span>
+<span class="block font-label text-[0.6rem] uppercase tracking-widest text-on-primary-container/70">Min</span>
+</div>
+<div class="bg-primary-container/40 p-3 rounded-2xl">
+<span id="secs" class="block font-headline text-2xl text-on-primary-container font-bold">00</span>
+<span class="block font-label text-[0.6rem] uppercase tracking-widest text-on-primary-container/70">Sec</span>
+</div>
+</div>
+<!-- Event Details -->
+<div class="my-6 space-y-3">
+<div class="flex items-center justify-center gap-2 text-primary">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+<span class="font-headline text-lg font-medium">May 13, 2026</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant/40"></span>
+<span class="font-headline text-lg font-medium">9:45 AM</span>
+</div>
+<div class="space-y-1">
+<h3 class="font-body font-bold text-on-surface text-lg">Sanjo Auditorium</h3>
+<p class="font-body text-sm text-on-surface-variant">Opp. St.Joseph's Church,</p>
+<p class="font-body text-sm text-on-surface-variant">Chunangamvely, Aluva</p>
+</div>
+</div>
+<!-- Asymmetric Map & Action Section -->
+<div class="w-full flex flex-col gap-4">
+<div class="relative w-full h-32 rounded-3xl overflow-hidden shadow-sm outline outline-1 outline-outline-variant/20">
+<iframe class="w-full h-full border-none" src="https://maps.google.com/maps?q=10.0897177,76.381047&hl=en&z=17&output=embed" allowfullscreen="" loading="lazy"></iframe>
+</div>
+<!-- Primary Action -->
+<a href="https://www.google.com/maps/dir/?api=1&destination=10.0897177,76.381047" target="_blank" class="w-full bg-primary hover:bg-primary-dim text-on-primary py-4 px-6 rounded-full flex items-center justify-center gap-2 transition-all active:scale-[0.98] shadow-md shadow-primary/10">
+<span class="material-symbols-outlined text-xl">directions_car</span>
+<span class="font-label text-sm font-bold tracking-widest uppercase">Get Directions</span>
+</a>
+</div>
+<!-- Decorative Footer -->
+<div class="mt-4 opacity-30 flex items-center gap-4 w-full justify-center">
+<div class="h-[1px] flex-1 bg-outline-variant"></div>
+<span class="material-symbols-outlined text-xs">auto_awesome</span>
+<div class="h-[1px] flex-1 bg-outline-variant"></div>
+</div>
+</div>
+<!-- Corner Accents -->
+<div class="absolute top-0 right-0 w-32 h-32 opacity-10 pointer-events-none transform translate-x-12 -translate-y-12">
+<div class="w-full h-full border-[1.5px] border-primary rounded-full"></div>
+</div>
+<div class="absolute bottom-0 left-0 w-24 h-24 opacity-10 pointer-events-none transform -translate-x-8 translate-y-8">
+<div class="w-full h-full border-[1.5px] border-primary rounded-full"></div>
+</div>
+</main>
+<script>
+    const targetDate = new Date("May 13, 2026 09:45:00").getTime();
+
+    function updateTimer() {
+        const now = new Date().getTime();
+        const diff = targetDate - now;
+
+        if (diff < 0) return;
+
+        const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = d.toString().padStart(2, '0');
+        document.getElementById("hours").innerText = h.toString().padStart(2, '0');
+        document.getElementById("mins").innerText = m.toString().padStart(2, '0');
+        document.getElementById("secs").innerText = s.toString().padStart(2, '0');
+    }
+    
+    setInterval(updateTimer, 1000);
+    updateTimer();
+</script>
+</body></html>
